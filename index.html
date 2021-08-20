@@ -42,6 +42,11 @@
                 </hgroup>
             </header><!-- Las etiquetas header y footer tambien sirven para crear secciónes dentro de otras zonas -->
             
+            <figure><!-- Insetar imágenes, videos, etc -->
+                <img src="img/img.jpg"/><!-- imágenes -->
+                <figcaption>Estructura de una página web</figcaption><!-- Pie con la descripción de una imagen -->
+            </figure>
+
             <p>Noticia 1</p><!-- Crear párrafos -->
             <p>Noticia 1</p>
             <p>Noticia 1</p>
@@ -56,7 +61,12 @@
                 <h2>Título de la noticia 2</h2>
             </header>
 
-            <p>Noticia 2</p>
+            <figure>
+                <img src="img/img2.jpg"/>
+                <figcaption>Diferentes etiquetas</figcaption>
+            </figure>
+
+            <p><mark>Noticia 2</mark></p>
             <p>Noticia 2</p>
             <p>Noticia 2</p>
 
@@ -71,6 +81,7 @@
                     <h2>Título de la noticia 3</h2>
                     <h3>Subtitulo de la noticia 3</h3>
                 </hgroup>
+                <time datetime="2021/08/20" pubdate>Noticia publicada el dia 20/08/21</time>
             </header>
 
             <p>Noticia 3</p>
@@ -85,7 +96,7 @@
    </section>
 
    <footer><!-- Información adicional (ej. contacto) -->
-        Derechos reservados Telf.: 612345678
+        <small>Derechos reservados</small> <address>Telf.: 612345678 </address>
    </footer>
 
 </body>
