@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="iso-8859-1"><!--Caractéres que tendra nuestra web-->
+    <meta name="description" content="Página de aprendizaje de html 5"><!--meta donde se establece la descrición de la pág.-->
+    <meta name="keywords" content="html5, css3, JavaScript, diseÃ±o web" /><!--Palabras clave para la busqueda de nuestra pág (casi obsoleto)-->
+    
+    <title>Primera página web</title><!--Título de nuestra pág. web-->
+    <link rel="stylesheet" href="style.css"/><!--Enlazar hojas de stilo-->
+
+</head>
+<body>
+    <!--Aquí se pone todo el contenido de nuestra página-->
+   <!-- <div></div> Para crear secciónes -->
+
+   <header><!-- cabecera -->
+       <h1>Título de nuestra web</h1><!-- Etiquetas h1 hasta h6 para títulos -->
+   </header>
+   
+   <nav><!-- Barra de navegación -->
+       <ul><!-- listas desordenadas (ordenadas con ol)-->
+           <li>Quienes somos</li>
+           <li>Productos</li>
+           <li>Precios</li>
+           <li>Contactanos</li>
+       </ul>
+   </nav>
+
+   <aside><!-- Barra latreral -->
+       <blockquote>Primer elemento</blockquote><!-- citas -->
+       <blockquote>Segundo elemento</blockquote>
+       <blockquote>Primer elemento</blockquote>
+   </aside>
+
+   <section><!-- Contenido principal -->
+        <article><!-- Agrupar parrafos de los mismos contenidos (visualmente no hace nada pero informa al navegador)-->
+            
+            <header>
+                <hgroup><!-- Agrupa etiquetas h -->
+                    <h2>Título de la noticia 1</h2>
+                    <h3>Subtitulo de la noticia 1</h3>
+                </hgroup>
+            </header><!-- Las etiquetas header y footer tambien sirven para crear secciónes dentro de otras zonas -->
+            
+            <p>Noticia 1</p><!-- Crear párrafos -->
+            <p>Noticia 1</p>
+            <p>Noticia 1</p>
+            
+            <footer>
+                <p>Comentarios de usuarios</p>
+            </footer>
+        </article>
+
+        <article>
+            <header>
+                <h2>Título de la noticia 2</h2>
+            </header>
+
+            <p>Noticia 2</p>
+            <p>Noticia 2</p>
+            <p>Noticia 2</p>
+
+            <footer>
+                <p>Comentarios de usuarios</p>
+            </footer>
+        </article>
+
+        <article>
+            <header>
+                <hgroup>
+                    <h2>Título de la noticia 3</h2>
+                    <h3>Subtitulo de la noticia 3</h3>
+                </hgroup>
+            </header>
+
+            <p>Noticia 3</p>
+            <p>Noticia 3</p>
+            <p>Noticia 3</p>
+
+            <footer>
+                <p>Comentarios de usuarios</p>
+            </footer>
+
+        </article>
+   </section>
+
+   <footer><!-- Información adicional (ej. contacto) -->
+        Derechos reservados Telf.: 612345678
+   </footer>
+
+</body>
+</html>
+
+<!-- Las etiquetas si están al mismo nivel serian "hermanos" y si están dentro serían 
+hijos de la etiqueta. Por úlimo, serían padres de las etiquetas a las que pertenece 
+otra etiqueta  -->
