@@ -5,11 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-<p>Hola</p>
-<p>Adios</p>
-<p>Febrero</p>
+
+<!--     <style>
+        p[name^="mis"]{/*^ comienza en    $ finaliza en    * en algún punto de la palabra*/
+            color: #F00;
+        }
+
+    </style> -->
+
+<!--    
+    <style>
+        
+        /* P:nth-child(3){ pseudoclases esto aplica al 3er hijo de cada etiqueta ****  odd para los impares/even para los pares
+            color: #F00;
+        }
+        */
+        p:first-child{ /* Primer hijo */
+            color: #F00;
+        }
+
+        p:last-child{ /* Último hijo */
+            color: #FFF;
+            background-color:black;
+        }
+
+        p:only-child{ /* Cuando solo tiene un hijo */
+            color: yellow;
+        }
+
+
+    </style> -->
+
+    <style>
+        @font-face { /* des esta forma nuestra pág siempre tendrá la fuente que nosotros queramo (debe estar en nuestra carpeta) */
+            font-family: 'miPropiaFuente';
+            src: url('BAUHS93.TTF');
+        }
+        #principal{
+            width:500px;
+            /* background-color:blue; */
+            text-align:center;/* alinear texto */
+            margin:15px auto;
+            padding:15px;
+            border:3px solid red;
+            border-radius: 20px 5px 15px 40px; /* redondear esquinas según la cantidad de números que pongamos se redondearan las esquinas (1 - todas)*/
+            box-shadow: #999 5px 5px 20px; /* sombra primer número vertical segundo horizontal tercer núm= cuanto ese difumina*/
+            background:-webkit-linear-gradient(left, #00F,#3FF);/* degradado de fondo ms para microsofot moz para mozilla  */
+            background:-moz-linear-gradient(top, #00F,#3FF);
+            outline:2px dashed blue;/* bordes exteriores */
+/*             -webkit-transform: scale(1,-1); invertir
+            -webkit-transform: rotate(30deg); girar
+ */
+            -webkit-transition: -webkit-transform 1s ease 0.5s;
+
+            
+        }
+
+        #principal:hover { /* Para que haga una acción cuando pases el ratón por encima */
+            -webkit-transform: rotate(5deg); girar
+        }
+
+        #titulo{
+            font: bold 36px "miPropiaFuente"; /* fuente   bold= negrita */
+            text-shadow: #0F0 3px 3px 5px;
+            color:rgba(0, 0, 0, 0.5);/* Trasparencia */
+        }
+
+
+    </style>
     
+
+</head>
+<!-- <body>
+<p name="misElementos">Hola</p>
+<p name="misElementos">Adios</p>
+<p name="misElementos">Febrero</p>
+
+<ol>
+    <li>
+        Frutas
+        <p>Manzana</p>
+
+    </li>
+</ol>
+     -->
+
+     <header id="principal">
+         <span id="titulo">Estilos CSS3</span><!-- Etiqueta para aplicar estilos individuales (frases, palabras, letras, etc) -->
+     </header>
 </body>
 </html>
