@@ -1,0 +1,34 @@
+/* body {/*Selector de etiqueta
+    background-color: #00F;
+} */
+
+#cabeceraweb {
+    background-color: blue;
+}
+
+#navegacionprincipal {
+    background-color:red;
+}
+
+#barraLateral {
+    background-color:green;
+    float: left; /* para colocar el bloque (solo lo que ocupe el texto)*/
+    height: 2080px; 
+}
+
+#contenidoPrincipal {
+    background-color: purple;
+    margin-left: 200px;
+    padding-left: 15px;/*Separación entre texto y márgenes de la caja*/
+    padding-top: 15px;
+}
+
+#piePrincipal {
+    background-color:yellow;
+    clear:both;/*Para limpiar la "invasión" de bloques*/
+    margin-top: 50px;/*Márgenes para separar bloques*/
+}
+li {
+    background-color:yellow;
+    display: inline; /*PARA PONER EN LINEA LAS LISTAS*/
+}
