@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+
+    <script>
+
+        var imagen;
+        //Primera forma 
+        function tipoFlor(){
+            alert("Pensamientos");
+        }
+
+        
+        /* function tipoFlor2(){
+            //Segunda forma
+            // document.getElementsByTagName("img")[0].onclick=tipoFlor;
+
+            /////////////////////////////////////////////////////////////
+            
+            //Tercera forma más actual con addEventListener
+
+            imagen = document.getElementsByTagName("img")[0];
+            imagen.addEventListener("click",tipoFlor,false);
+        } */
+
+
+        //Ejemplo
+
+        function manejaFlor(){
+            imagen = document.getElementsByTagName("img")[0];
+            //Podemos desencadenar varios eventos con este método
+            imagen.addEventListener("mouseover",crecerFlor,false);
+            imagen.addEventListener("mouseout",menguarFlor,false);
+            imagen.addEventListener("click",tipoFlor,false);
+        }
+
+        function crecerFlor(){
+            imagen.width =225;
+            imagen.height = 225;
+
+        }
+
+        function menguarFlor(){
+            imagen.width =200;
+            imagen.height = 200;
+        }
+
+        window.onload = manejaFlor;
+
+
+
+        //window.onload = tipoFlor2;//esto ejecutará la función tipoFlor2 nada más cargar la pág.
+
+    </script>
+</head>
+<body>
+
+    <p>
+        <!-- Primera forma <img src="imagenes/1.jpg" onclick="tipoFlor();"/> Menos recomendada (meterlo dentro de la etiqueta) -->
+        <img src="imagenes/1.jpg"/>
+    
+    
+    
+    </p>
+    
+</body>
+</html>
