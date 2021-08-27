@@ -1,0 +1,46 @@
+section{
+    width: 720px;
+    margin: 20px auto;
+    background-color: #FC3;
+    padding:5px;
+    border: 2px solid orange;
+    border-radius:8px;
+}
+#prueba{
+
+    text-align: center;
+    /* margin: 20px auto; */
+
+
+
+}
+body{
+    background-color:black;
+}
+
+nav{
+    margin: 5px 0;/* primer numero espacio arriba y abajo, segundo izq y derecha */
+
+}
+#botonera{
+    float: left;
+    width:100px;
+    height:20px;
+}
+
+#barra{
+    background:#FFF;
+    width:600px;
+    height: 16px;
+    border: 1px solid #666;
+    padding: 3px;
+    margin-left: 80px;
+
+}
+#progreso{
+    position: absolute;
+    width:0;
+    height:16px;
+    background: rgba(0,0,150,2);
+
+}
