@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <title>Videos</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <section id="videos">
+        
+        <!-- Controls para que el video tenga controles por defecto (podemos crearlos con CSS ydarle funcionalidad con JS) -->
+        <video id="miVideo" src="videos/video_prueba.mp4" width="720" controls loop poster = "videos/barcos-piratas.jpg"></video>
+           <!--  <source src="videos/video_prueba.mp4"> Otra forma de linkar el video-->
+        </video>
+
+        <nav><!-- Insertar barra de navegación -->
+            <div id="botonera">
+                <button type="button" id="reproducir">Play</button>
+            </div>
+            <div id="barra">
+                <div id="progreso"></div>
+            </div>
+        </nav>
+
+    </section>
+
+</body>
+</html>
