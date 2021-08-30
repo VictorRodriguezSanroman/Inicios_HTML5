@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <title>Formularios</title>
+    <style>
+
+        section{
+            background-color:black;
+            color: white;
+            text-align:center;
+        }
+
+        input{
+            text-align:center;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <section>
+        <form name="miFormulario" id="miFormulario" method="get" autocomplete="off"> DATOS PERSONALES<!-- método get => para añadir el texto a un futuro almacenamiento -->
+            <br>
+            <br>
+
+            Nombre: &nbsp; <input type="text" name="nombre" id="nombre" placeholder="Nombre completo"><!-- placeholder para escribir dentro del cuadro de texto -->
+            <br><!-- Salto de línea -->
+            <br>
+
+            Edad: &nbsp; <input type="number" name="edad" min="1" max="100">
+            <br>
+            <br>
+
+            Fecha de nacimiento: &nbsp; <input type="date" name="Fecha de nacimiento" id="fechaNac">
+            <!-- Puedes cambiar el type por month o week o time para registrar la fecha a partir del mes o de la semana -->
+            <br>
+            <br>
+
+            Email: &nbsp; <input type="email" name="email" id="email" required><!-- required para especificar el campo requerido -->
+            <!-- atributos: autocomplete: para autocompletar o no el formulario por defecto si no se especifica SI lo hará
+                            novalidate: -->
+            <br>
+            <br>
+
+            Código postal: &nbsp; <input pattern="[0-9]{5}" name="CP" id="codPostal"><!-- pattern para establecer un rango [] y un número maximo de digitos {} -->
+            <br>
+            <br>
+
+            Buscar: &nbsp; <input type="search" name="search" id="search" multiple><!-- atributo múltiple para que admita más de 1 elemento -->
+            <br>
+            <br>
+
+            Url: &nbsp; <input type="url" name="url" id="url" autofocus><!-- Atributo autofocus para que el cursor aparezca donde lo coloquemos -->
+            <br>
+            <br>
+
+            Rango: &nbsp; <input type="range" name="rango" min="0" max="50" step="5" placeholder="Múltiplos de 5"><!-- atributo step para coger múltipos del dato dado -->
+            <br>
+            <br>
+
+            <input type="submit" value= "Añadir"><!-- Boton para enviar -->
+
+        </form>
+        <br>
+        <br>
+
+        <img src="barcos-piratas.jpg" width="480">
+
+        <br>
+        <br>
+
+        Nombre del barco: &nbsp; <input type="text" name="nombreBarco" id="nombreBar" form="miFormulario"> <!-- atributo form para añadir un elemento fuera del formulario al formulario especificado -->
+        
+    </section>
+    
+</body>
+</html>
