@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de la API forms 2</title>
+
+    <link rel="stylesheet" href="Estilos/style.css">
+    <script src="JS/app2.js"></script>
+</head>
+
+<body>
+
+    <section>
+        <form name="datos_usuario" method="get" autocomplete="off">
+            <table>
+                <tr>
+                    <td>Ususario:</td>
+                    <td><input pattern="[A-Za-z]{3}" name="usuario" id="usuario" maxlength="10" required></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="miEmail" id="miEmail" required></td>
+                </tr>
+                <tr>
+                    <td>Edad:</td>
+                    <td><input type="range" name="miEdad" id="miEdad" min="0" max="120" value="30" step= "30"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <output id="rango">0 a 30</output>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" id="enviar" value="Registrar"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+</body>
+</html>
