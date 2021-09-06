@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trazados</title>
+
+    <style>
+        #lienzo {
+            
+            border: 1px solid black;
+        }
+
+
+    </style>
+    <script>
+        function comenzar(){
+            let elemento = document.getElementById("lienzo");
+
+            lienzo = elemento.getContext("2d");
+
+            //Método beginPath() para comenzar el trazado
+            //moveTo(x,y) para mover el lápiz (cursor) ==> Cordenadas x e y sobre el lienzo
+            //lineTo(x,y) para dibujar las líneas
+            //closePath() para cerrar el dibujo
+
+            //Triangulo
+            lienzo.beginPath();
+
+            lienzo.moveTo(100, 200);
+            lienzo.lineTo(200,200);
+            lienzo.lineTo(150,150);
+            lienzo.lineTo(100,200);
+
+            lienzo.closePath();
+
+            //lienzo.clip(); //así se trata de una máscara y solo se verá a través de ella
+
+            lienzo.beginPath();
+
+            for (var i = 0; i < 300; i += 10){
+
+                lienzo.moveTo(0, i);
+
+                lienzo.lineTo(500, i);
+
+            }
+
+            lienzo.stroke();//Para que aparezca en el lienzo con una figura vacía
+            //lienzo.fill();//Figura rellena
+
+        }
+
+
+
+
+
+
+
+        window.addEventListener("load", comenzar,false);
+    </script>
+</head>
+<body>
+
+    <section id="dibujo">
+
+        <canvas id="lienzo" width="500" height="300">
+
+
+            Este elemento no es soportado por su navegador
+
+
+        </canvas>
+    </section>
+    
+</body>
+</html>
