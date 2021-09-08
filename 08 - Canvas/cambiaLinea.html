@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara en canvas</title>
+    <style>
+    #lienzo{
+        border: 1px solid red;
+        background-color:rgb(245, 245, 196);
+    }
+
+    section{
+        width: 800px;
+        position: relative;/* Para centrar la sección */
+        margin: auto;/* Para centrar la sección */
+    }
+    </style>
+
+    <script>
+
+        function comenzar(){    
+
+            //cara
+            let cara = document.getElementById("lienzo");
+            lienzo = cara.getContext("2d");
+
+            lienzo.lineWidth = 10;
+            lienzo.beginPath();
+            lienzo.arc(400,300,100,0,2 * (Math.PI),false);
+            lienzo.stroke();
+
+            //boca
+            lienzo.lineWidth = 5;//Cambiar grosor del trazado
+            lienzo.lineCap = "round";//terminaciones del trazado redondas si ponemos square las pone cuadradas
+
+            
+            lienzo.beginPath(); //Cada vez que inicimos un trazo nuevo
+
+            lienzo.arc(400, 310, 70, 1, Math.PI, false);
+            lienzo.stroke();
+
+            lienzo.lineTo(440, 367);
+            lienzo.stroke();
+
+            //nariz
+            lienzo.lineWidth = 3;
+            
+            lienzo.lineJoin = "miter"; //para unir los trazos
+            lienzo.miterLimit = 2; //darle forma redondeada a la union
+            
+
+            lienzo.beginPath();
+            lienzo.moveTo(400, 280);
+
+            lienzo.lineTo(420, 305);
+            lienzo.lineTo(390, 305);
+
+            lienzo.stroke();
+
+            //Ojos
+            lienzo.lineWidth = 1;
+
+            //Ojo izquierdo
+            lienzo.beginPath();
+            lienzo.arc (367, 250, 10, 0, (2 * Math.PI), false);
+            lienzo.fill();
+
+            lienzo.beginPath();
+            lienzo.arc (360, 255, 20, 0,(2 * Math.PI), false);
+            lienzo.stroke();
+
+            //Ojo derecho
+            lienzo.beginPath();
+            lienzo.arc (432, 260, 10, 0,(2 * Math.PI), false);
+            lienzo.fill();
+
+            lienzo.beginPath();
+            lienzo.arc (440, 255, 20, 0,(2 * Math.PI), false);
+            lienzo.stroke();
+
+        }
+
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+
+</head>
+<body>
+    <section id="dibujo">
+        <canvas id="lienzo" width="800" height="600">
+
+            Su navegador no soporta el elemnto Canvas
+
+
+        </canvas>
+    </section>
+</body>
+</html>
