@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superposiciones</title>
+
+    <style>
+        section {
+            width: 1200px;
+            display: inline;
+        }
+        #lienzo,#lienzo2{
+            border: 1px solid red;
+        }
+
+    </style>
+    <script>
+
+        function comenzar(){
+
+            //lienzo
+            let elemento = document.getElementById ("lienzo");
+            lienzo = elemento.getContext("2d");
+
+            lienzo.fillStyle = "#880000";//Color al rectangulo
+            lienzo.fillRect(400,250,300,100);//creamos el rectangulo
+
+            lienzo.globalCompositeOperation = "destination-atop";
+            //lienzo.globalCompositeOperation = "source-out";//método para superponer dos elementos (tiene diferentes opciones visitar w3.org)
+
+            lienzo.fillStyle = "#AAAAFF";
+            lienzo.font = "bold 80px Verdana";
+            lienzo.textAlign = "center";
+            lienzo.textBaseline = "middle";
+            lienzo.fillText("Hello World", 550,300);
+
+            //lienzo2
+            elemento = document.getElementById("lienzo2");
+            lienzo2 = elemento.getContext("2d");
+
+            let imagen = new Image(); //Creamos el objeto imagen
+            imagen.src = "http://www.pildorasinformaticas.com/archivos/logos/html5online.jpg";//Cargamos la imagen se puede hacer tanto desde nuestro ordenador como de internet
+
+            imagen.addEventListener("load", function(){
+                lienzo2.drawImage(imagen,0,0,200,170/* elemento.width,elemento.height (para ajustar al mismo tamaño que nuestro canvas)*/)},false);//Dibujamos la imagen cargada (x,y,ancho,alto) para cada uno de los datos dados
+                //lienzo2.drawImage(imagen,50,10,75,75,0,0,300,300)},false);//(x,y,ancho,alto,x sobre la imagen, y sobre la imagen, ancho recotado, alto recortado)
+                 
+        }
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+</head>
+<body>
+    <section id="dibujo">
+        <canvas id="lienzo" width="1200" height="900">
+            Su navegador no soporta el elemento Canvas
+        </canvas>
+
+        <canvas id="lienzo2" width="1200" height="900">
+            Su navegador no soporta el elemento Canvas
+        </canvas>
+
+    </section>
+    
+</body>
+</html>
