@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranformaciones</title>
+    <style>
+        #lienzo1,#lienzo2,#lienzo3{
+            border: 1px solid blue;
+        }
+
+        section{
+            width: 1200px;
+            display: inline;
+            
+        }
+    </style>
+
+    <script>
+
+        function comenzar(){
+
+            //lienzo1
+
+            let elemento = document.getElementById("lienzo1");
+
+            lienzo1 = elemento.getContext("2d");
+
+            lienzo1.font = "bold 20px verdana";
+            lienzo1.fillText("Hello World", 50, 20);
+
+            lienzo1.translate(100,100);//Trasladar el eje de coordenadas (se clona el texto)
+            lienzo1.scale(3,3);//Distorsionamos el texto cambiandolo de escala (Ancho,Alto)
+
+            lienzo1.rotate(Math.PI);//rotamos el canvas en este grado 180º
+            //Debemos mover el canvas 
+            lienzo1.fillText("Hello World", -200,-150);//Se debe volver a poner ya que se lee de arriba a abajo (o poner directamente al final si no queremos ver la primera opción)
+
+
+
+            //lienzo2
+
+            elemento = document.getElementById("lienzo2");
+            lienzo2 = elemento.getContext("2d");
+            
+
+            lienzo2.transform(3,0,0,1,0,0); //Los 2 útlimos coordenadas x, y del lienzo, el resto puede tumbar, rotar etc
+            lienzo2.font = "bold 20px verdana";
+            lienzo2.fillText("Hello World 2", 50, 50);
+
+            //lienzo.transform(1,0,0,10,0,0);//muestra de que este método es acumulativo (arrastra las caracteristicas modificadas anteriormente)
+            lienzo2.setTransform(1,0,0,10,0,0);// Con el metodo setTransform evitamos esto
+            lienzo2.font = "bold 20px verdana";
+            lienzo2.fillText("Hello World 2", 50, 50); 
+ 
+
+            //lienzo3
+
+            elemento = document.getElementById("lienzo3");
+            lienzo3 = elemento.getContext("2d");
+
+            lienzo3.font = "bold 20px verdana";
+
+            lienzo3.save();//Con el método save() guardamos el texto y podremos modificarlo y luego recuperarlo
+
+            lienzo3.fillText("Hello World 3", 50, 50);
+            lienzo3.translate(60,70);
+            lienzo3.rotate(Math.PI / 180 * 55); //Invertimos el lienzo
+            lienzo3.fillText("Hello World 3", 0,0);
+            //lienzo3.rotate(-Math.PI / 180 * 55); //Volvemos a poner el lienzo como estaba
+            
+            lienzo3.restore();//restaura hasta el punto que teniamos el método save()
+
+            lienzo3.translate(300,400);
+            lienzo3.scale(2,2);
+            lienzo3.fillText("Hello World 3",100,100); 
+
+
+
+            //Con el método save() guardamos el texto y podremos modificarlo y luego recuperarlo
+        }
+
+
+        window.addEventListener("load", comenzar,false);
+    </script>
+</head>
+<body>
+    <section id="dibujo">
+
+        <canvas id="lienzo1" width="1200" height="900">
+            Su navegador no soporta Canvas
+        </canvas>
+
+        <canvas id="lienzo2" width="1200" height="900">
+            Su navegador no soporta Canvas
+        </canvas>
+
+        <canvas id="lienzo3" width="1200" height="900">
+            Su navegador no soporta Canvas
+        </canvas>
+
+    </section>
+    
+</body>
+</html>
